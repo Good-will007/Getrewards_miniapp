@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Get Rewards</title>
+
+  <!-- Telegram Mini App -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+  <!-- Monetag -->
+  <script src="//libtl.com/sdk.js"
+          data-zone="8945912"
+          data-sdk="show_8945912"></script>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 40px 20px;
+      background: #f5f5f5;
+    }
+
+    h1 {
+      font-size: 28px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      background: #2481cc;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>🎁 Get Rewards</h1>
+
+  <p>Watch an ad to continue</p>
+
+  <button onclick="showAd()">Watch Ad</button>
+
+  <script>
+    const tg = window.Telegram?.WebApp;
+
+    if (tg) {
+      tg.ready();
+      tg.expand();
+    }
+
+    function showAd() {
+      if (typeof show_8945912 === "function") {
+        show_8945912();
+      } else {
+        alert("Ad is loading. Please try again.");
+      }
+    }
+  </script>
+
+</body>
+</html>
